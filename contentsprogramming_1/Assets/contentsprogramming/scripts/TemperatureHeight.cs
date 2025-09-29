@@ -9,16 +9,22 @@ public class TemperatureHeight : MonoBehaviour
     private Transform myTransform;
 
 
+
     void Start()
     {
         myTransform = GetComponent<Transform>();
-        float height = (temperature / 50.0f) * maxheight;
-
-        myTransform.localScale =new Vector3(1f, height, 1f);
 
 
-        
     }
 
+    void Update()
+    {
+        float height = (temperature / 50.0f) * maxheight;
+
+        myTransform.localScale = new Vector3(1f, height, 1f);
+        Debug.Log("온도에 따른 높이 설정 완료:"+ height);
+    }
+
+ 
    
 }
