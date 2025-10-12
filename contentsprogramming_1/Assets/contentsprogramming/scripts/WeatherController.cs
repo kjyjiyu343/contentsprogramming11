@@ -9,6 +9,8 @@ public class WeatherController : MonoBehaviour
     public GameObject thermometerPrefab;      // 온도계 프리팹 루트
     public Transform thermometerParent;       // Thermometer_Parent (크기 조절용)
     public float currentTemperature = 25.0f;  // 현재 온도
+    [Header("외부 연결")]
+public WeatherTextDisplay textDisplay;
     public float maxHeight = 2.0f;           // 최대 높이 (프리팹에 맞게 조정)
     
     [Header("디버깅")]
@@ -30,7 +32,7 @@ public class WeatherController : MonoBehaviour
                 barRenderer = barChild.GetComponent<Renderer>();
             }
         }
-        
+
         // 초기 온도 적용
         UpdateTemperature(currentTemperature);
         
@@ -113,9 +115,21 @@ public class WeatherController : MonoBehaviour
     {
         UpdateTemperature(20.0f);
     }
-    
+
     public void SetWarmWeather()  // 따뜻한 날씨
     {
         UpdateTemperature(35.0f);
     }
+    
+    void Update()
+{
+    // 온도를 0도에서 50도 사이로 시간에 따라 부드럽게 변화시키는 로직
+    float normalizedValue = (Mathf.Sin(Time.time * 0.1f) + 1.0f) * 0.5f;
+    float minTemp = 0.0f;
+    float maxTemp = 50.0f;
+    float newTemperature = Mathf.Lerp(minTemp, maxTemp, normalizedValue);
+
+    // UpdateTemperature 함수를 호출하여 온도계 높이와 UI를 업데이트
+    UpdateTemperature(newTemperature);
+}
 }
