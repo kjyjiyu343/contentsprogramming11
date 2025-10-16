@@ -164,13 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404e4f9aec2294e81973a4f5ea5823c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thermometerPrefab: {fileID: 0}
-  thermometerParent: {fileID: 1241545420}
-  currentTemperature: 25
+  temperatureBarScript: {fileID: 1241545421}
   temperatureInputField: {fileID: 0}
   temperatureText: {fileID: 0}
-  textDisplay: {fileID: 32693004}
-  maxHeight: 2
   showDebugInfo: 1
 --- !u!114 &32693004
 MonoBehaviour:
@@ -360,7 +356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -355, y: -167}
+  m_AnchoredPosition: {x: -342.99997, y: -42.999977}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &799992312
@@ -484,7 +480,7 @@ RectTransform:
   m_GameObject: {fileID: 1049924004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.66, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1634625235}
@@ -629,7 +625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -355, y: -312}
+  m_AnchoredPosition: {x: -342.99997, y: -187.99997}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161286456
@@ -762,7 +758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352, y: -19}
+  m_AnchoredPosition: {x: -340, y: 105}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172817038
@@ -864,11 +860,17 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1927590759331781560, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
   m_PrefabInstance: {fileID: 1270607848}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1241545420 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5188341208645525171, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
+--- !u!114 &1241545421 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7393855574697758984, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
   m_PrefabInstance: {fileID: 1270607848}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9863046454bb649bd8014cb94358abf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1270607848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,13 +891,21 @@ PrefabInstance:
       propertyPath: temperature
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 650017423345863575, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
+      propertyPath: currentTemperature
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 650017423345863575, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
+      propertyPath: Render_Bar_Transform
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1647168006744171127, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: m_Name
       value: Thermometer_Complete (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5188341208645525171, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: m_LocalScale.y
-      value: -4.6
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 5188341208645525171, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: m_LocalScale.z
@@ -907,15 +917,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5188341208645525171, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.66
+      value: 3.13
       objectReference: {fileID: 0}
     - target: {fileID: 5188341208645525171, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7393855574697758984, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
+      propertyPath: maxTemp
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393855574697758984, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
+      propertyPath: minTemp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393855574697758984, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
+      propertyPath: maxHeight
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393855574697758984, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: temperature
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393855574697758984, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
+      propertyPath: currentTemperature
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7412118636492412921, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: m_LocalPosition.x
@@ -959,7 +985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8623215172467904657, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.68
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 8623215172467904657, guid: 16d4a7ab90cc44339b87af737ac0e954, type: 3}
       propertyPath: m_LocalPosition.x
@@ -985,7 +1011,7 @@ GameObject:
   - component: {fileID: 1285185699}
   - component: {fileID: 1285185698}
   m_Layer: 0
-  m_Name: WeatherSystem
+  m_Name: WeatherSystem_real
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,13 +1029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404e4f9aec2294e81973a4f5ea5823c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thermometerPrefab: {fileID: 0}
-  thermometerParent: {fileID: 0}
-  currentTemperature: 25
+  temperatureBarScript: {fileID: 1241545421}
   temperatureInputField: {fileID: 0}
   temperatureText: {fileID: 0}
-  textDisplay: {fileID: 0}
-  maxHeight: 2
   showDebugInfo: 1
 --- !u!4 &1285185699
 Transform:

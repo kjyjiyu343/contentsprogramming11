@@ -110,8 +110,9 @@ public class TemperatureHeight : MonoBehaviour
         UpdateThermometer(20.0f); // 중간 온도 설정
     }
 
-    public void SetWarmWeather() 
+    public void SetWarmWeather()
     {
         UpdateThermometer(35.0f); // 높은 온도 설정
     }
+    
 }
