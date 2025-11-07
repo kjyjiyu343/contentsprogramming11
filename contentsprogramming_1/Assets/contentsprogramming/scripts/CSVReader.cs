@@ -6,7 +6,7 @@ public class CSVReader : MonoBehaviour
 {
     // 데이터를 로드할 파일 이름 (Resources 폴더 안에 있는 파일 이름)
     // Resources/test.csv 파일이 있다고 가정합니다. 확장자는 제외합니다.
-    private const string CSV_FILE_NAME = "test"; 
+    private const string CSV_FILE_NAME = "test copy";
 
     void Start()
     {
