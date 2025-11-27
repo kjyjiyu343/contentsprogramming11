@@ -1,6 +1,6 @@
+using TMPro; // TextMeshProUGUI 사용을 위해 필요
 using UnityEngine;
 using UnityEngine.UI; // Slider와 Toggle 사용을 위해 필요
-using TMPro; // TextMeshProUGUI 사용을 위해 필요
 
 public class MusicPlayerController : MonoBehaviour
 {

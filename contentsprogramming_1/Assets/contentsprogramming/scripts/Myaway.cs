@@ -1,6 +1,6 @@
+using System.Collections;   
 using UnityEditor.Rendering;
 using UnityEngine;
-using System.Collections;   
 
 public class Myaway : MonoBehaviour
 {

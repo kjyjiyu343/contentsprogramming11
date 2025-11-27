@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.IO;        // 이 네임스페이스는 Resources.Load 방식에서는 필수가 아닙니다.
 using System.Text;      // 이 네임스페이스도 Resources.Load 방식에서는 필수가 아닙니다.
+using UnityEngine;
 
 public class CSVReader : MonoBehaviour
 {

@@ -1,5 +1,5 @@
-using UnityEngine;
 using TMPro; // Necessary to control TextMeshProUGUI components
+using UnityEngine;
 
 public class LightController : MonoBehaviour
 {

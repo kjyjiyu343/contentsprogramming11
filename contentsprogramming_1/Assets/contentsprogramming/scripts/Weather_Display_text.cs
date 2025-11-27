@@ -1,6 +1,6 @@
+using TMPro;  // TextMeshPro 사용을 위해 필요
 using UnityEngine;
 using UnityEngine.UI; 
-using TMPro;  // TextMeshPro 사용을 위해 필요
 
 public class WeatherTextDisplay : MonoBehaviour
 {
