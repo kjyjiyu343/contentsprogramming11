@@ -4,33 +4,56 @@ public class MapController : MonoBehaviour
 {
     // --- 줌 설정 변수 ---
     [Header("Zoom Settings")]
-    public float zoomSpeed = 5f;          // 줌 속도 (마우스 휠 민감도)
-    public float minZoomScale = 0.5f;     // 최소 줌 배율 (가장 축소)
-    public float maxZoomScale = 3.0f;     // 최대 줌 배율 (가장 확대)
+    public float zoomSpeed = 5f;          
+    public float minZoomScale = 0.5f;     
+    public float maxZoomScale = 12.0f;    // 사진 보니 최대 12까지 쓰시는 것 같아 수정했습니다.
+
+    // --- 드래그 설정 변수 ---
+    [Header("Drag Settings")]
+    private Vector3 lastMousePosition;    // 직전 마우스 위치 저장용
 
     void Update()
     {
         HandleZoom();
-        // HandleDrag() 함수가 제거되어 드래그 기능은 비활성화됩니다.
+        HandleDrag(); // 드래그 기능 활성화
     }
 
     // 1. 마우스 휠을 이용한 줌 기능 처리
     void HandleZoom()
     {
-        // 마우스 휠 입력값 가져오기
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
         if (scroll != 0f)
         {
             Vector3 currentScale = transform.localScale;
-            // 줌 속도와 휠 입력에 따라 새 배율 계산
             float newScaleFactor = currentScale.x + scroll * zoomSpeed * 0.1f; 
             
-            // 최소/최대 줌 범위 제한
             newScaleFactor = Mathf.Clamp(newScaleFactor, minZoomScale, maxZoomScale);
-
-            // 스케일 적용 (2D이므로 X, Y축만 동일하게 변경)
             transform.localScale = new Vector3(newScaleFactor, newScaleFactor, 1f);
+        }
+    }
+
+    // 2. 마우스 왼쪽 버튼 드래그 기능 처리
+    void HandleDrag()
+    {
+        // 마우스 왼쪽 버튼을 처음 눌렀을 때
+        if (Input.GetMouseButtonDown(0))
+        {
+            lastMousePosition = Input.mousePosition;
+        }
+
+        // 마우스 왼쪽 버튼을 누르고 있는 동안
+        if (Input.GetMouseButton(0))
+        {
+            // 마우스가 움직인 거리 계산 (현재 위치 - 이전 위치)
+            Vector3 delta = Input.mousePosition - lastMousePosition;
+
+            // 지도의 위치를 마우스 움직임만큼 이동
+            // UI(RectTransform) 기반이므로 transform.position을 직접 수정합니다.
+            transform.position += delta;
+
+            // 현재 위치를 다시 저장하여 다음 프레임 계산에 사용
+            lastMousePosition = Input.mousePosition;
         }
     }
 }
