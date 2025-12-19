@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 8a91967f3e1ea494b95ad879a58012cd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - csvFile: {fileID: 4900000, guid: 7007ba6d4d2ba4dfca2408448a7b6b59, type: 3}
+  - barPrefab: {fileID: 8465265486290715529, guid: 202cec53e3f7c40a7b0ece80623f60d6, type: 3}
+  - mapRect: {instanceID: 0}
+  - yearToggle: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
